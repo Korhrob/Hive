@@ -231,6 +231,8 @@ int	main(void)
 
 	t_list* copy = ft_lstmap(*lst, f_func, del_func);
 
+	ft_lstclear(lst, del_func);
+
 	ft_printlst(copy, len);
 
 	printf("- lstclear -\n");
@@ -238,6 +240,8 @@ int	main(void)
 	ft_lstclear(&copy, del_func);
 
 	ft_printlst(copy, len);
+	
+	free(lst);
 
 	return (0);
 }
